@@ -1,3 +1,22 @@
+# Emacs
+
+This is vanilla Emacs straight from the main repo (as a mirror), but with some fixes. 
+
+I'm working on a minimal version of Emacs but I need a usable regular Emacs while I do that: https://github.com/Jaiheravi/emacs-zero
+
+## Fixes
+
+- [TODO] **Fix line height**. The cursor must be rendered equally no matter its position. Currently, the cursor height changes on EOL. This is an absurd bug I've seen for more than a decade, and one of the reasons why I only use Emacs on the terminal, and have the terminal handling the text rendering instead. This has been reported to the Emacs maintainers before but apparently nobody cares about proper typography.
+
+- [TODO] **Don't do EOL conversions for unknown encoding systems**. *Open a PDF file as text -> save it without changing anything -> get a broken PDF*. I tried to edit some PDF metadata, and gave up. This is part of the encoding system, I'll remove the `raw-text` branch and always default to `no-conversion`. On my heavily modified version ([Emacs-zero](https://github.com/Jaiheravi/emacs-zero)), I'll just keep `UTF-8` and default to `no-conversion` because the `coding.c` file is 12k LoC + lots of encoding files (!?).
+
+> [!NOTE]
+> *Why not contributing to the official Emacs?* 
+>
+> I plan to break things I don't need while fixing those that I do. That's true freedom.
+
+## Original README
+
 Copyright (C) 2001-2026 Free Software Foundation, Inc.
 See the end of the file for license conditions.
 
